@@ -1,8 +1,10 @@
 // src/Header.js
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Top = () => {
+  const Navigate =useNavigate()
   const handleSearchClick = () => {
     console.log('Search button clicked');
   };
@@ -10,9 +12,9 @@ const Top = () => {
   return (
     <div className="flex items-center justify-between p-4 bg-white shadow rounded-md">
       <div className="flex items-center gap-2 rounded-md border ">
-      <button className="px-4 py-2 rounded-md  hover:bg-indigo-600">List</button>
-            <button className="px-4 py-2 rounded-md hover:bg-indigo-600 ">Board</button>
-            <button className="px-4 py-2 rounded-md hover:bg-indigo-600 ">Timeline</button>
+      <button className="px-4 py-2 rounded-md  hover:bg-indigo-600"onClick={()=>{Navigate("/Settings")}}>List</button>
+            <button className="px-4 py-2 rounded-md hover:bg-indigo-600 "onClick={()=>{Navigate("/BoardList")}}>Board</button>
+            <button className="px-4 py-2 rounded-md hover:bg-indigo-600 "onClick={()=>{Navigate("/Timeline")}}>Timeline</button>
       </div>
       <div className="relative">
         <input

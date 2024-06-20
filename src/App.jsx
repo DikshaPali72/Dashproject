@@ -16,6 +16,10 @@ import Calendar from './components/Calendar/Calendar'
 import Login from './components/Login/Login'
 import SignUp from './components/SignUp/SignUp'
 import AddCustomer from './components/Analytics/AddCustomer'
+import CalMonth from './components/Calendar/CalMonth'
+import CalYear from './components/Calendar/CalYear'
+import BoardList from './components/Settings/BoardList'
+import Timeline from './components/Settings/Timeline'
 
 
 function App() {
@@ -66,6 +70,22 @@ function App() {
     {
       path:'/AddCustomer',
       element: <><DashNav/><AddCustomer/></>
+    },
+    {
+      path:'/CalMonth',
+      element: <><DashNav/><CalMonth/></>
+    },
+    {
+      path:'/CalYear',
+      element: <><DashNav/><CalYear/></>
+    },
+    {
+      path:'/BoardList',
+      element: <><DashNav/><BoardList/></>
+    },
+    {
+      path:'/Timeline',
+      element: <><DashNav/><Timeline/></>
     },
   
   ])

@@ -1,68 +1,38 @@
-import React from "react";
-import { CiEdit } from "react-icons/ci";
-import { MdDelete } from "react-icons/md";
-import { CiCalendarDate } from "react-icons/ci";
-import { MdOutlineAccessTimeFilled } from "react-icons/md";
-
-import { CiLocationOn } from "react-icons/ci";
+import React from 'react'
 import MT4 from "../images/MsgT4.png";
+import { useNavigate } from "react-router-dom";
 
-const Schedule = () => {
-  const meetings = [
-    {
-      date: "01 Dec, 2021",
-      time: "04:30PM",
-      location: "Meeting Outside",
-      edit: <CiEdit />,
-      icon: <MdDelete /> 
-    },
-    { date: "02 Dec, 2021", time: "10:15AM", location: "Friends",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "04 Dec, 2021", time: "11:15AM", location: "Office Meeting",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "04 Dec, 2021", time: "01:25PM", location: "Home",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "05 Dec, 2021", time: "10:15AM", location: "Meeting Outside",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "07 Dec, 2021", time: "01:20PM", location: "Home",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "08 Dec, 2021", time: "12:15PM", location: "Office Meeting",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "09 Dec, 2021", time: "11:45AM", location: "Friends Zune",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "10 Dec. 2021", time: "11:20AM", location: "Home",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "12 Dec, 2021", time: "10.15AM", location: "Office Meeting",
-      edit: <CiEdit />,
-      icon: <MdDelete />  },
-  ];
+const CalMonth = () => {
+    const navigate=useNavigate()
+  const daysInMonth = new Array(31).fill(null).map((_, i) => i + 1);
 
+  const events = {
+    2: [{ label: 'Free day', color: 'bg-teal-500' }, { label: 'Party Time', color: 'bg-pink-500' }],
+    16: [{ label: 'Victory day', color: 'bg-orange-500' }],
+    21: [{ label: 'Invited by friends', color: 'bg-pink-500' }],
+    25: [{ label: 'Christmas Day', color: 'bg-teal-500' }],
+  };
   return (
-    <div className="" >
-       <div className="flex justify-between items-center mt-4">
-                <h2 className="text-xl font-bold">Invoice List</h2>
-                <button className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">
-                  + Add New
-                </button>
-              </div>
-      <div className="">
-        <div className="flex w-full">
-          <div>
-            <div class="max-w-sm w-full shadow-lg">
-              <div class="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
-                <div className="flex flex-row justify-between p-4">
-                  <button className="bg-blue-500 ml-16 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    + Create Schedule
-                  </button>
+    <div className="flex flex-col">
+         <div className="flex justify-between m-4">
+                <h1 className="font-bold text-lg">Calender</h1>
+                <div className=" space-x-3 ">
+                   <button className="bg-gray-200 hover:bg-indigo-600 rounded-lg px-4 py-1 "onClick={()=>{navigate("/Calendar")}}>Day</button>
+                   <button className="bg-gray-200 hover:bg-indigo-600 rounded-lg px-4 py-1 ">Week</button>
+                   <button className="bg-gray-200 hover:bg-indigo-600 rounded-lg px-4 py-1 "onClick={()=>{navigate("/CalMonth")}}>Month</button>
+                   <button className="bg-gray-200 hover:bg-indigo-600 rounded-lg px-4 py-1 "onClick={()=>{navigate("/CalYear")}}>Year</button>
                 </div>
+            </div>
+      <div className="flex flex-row justify-between bg-gray-200 p-4">
+        <button className="bg-blue-500 ml-16 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          + Create Schedule
+        </button>
+      </div>
+     
+   <div className="flex">
+   <div>
+      <div class="max-w-sm w-full shadow-lg">
+              <div class="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">
                 <div class="px-4 flex items-center justify-between">
                   <span
                     tabindex="0"
@@ -410,123 +380,76 @@ const Schedule = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col p-4 w-96">
-              <h1 className="text-xl font-bold">People</h1>
-              <input
-                type="text"
-                placeholder="Search for People"
-                className="border border-gray-200 rounded p-2 mb-4 "
-              />
-              <div className="flex flex-col space-y-2">
-                <div className="flex   bg-gray-100 p-2 hover:bg-gray-200 rounded">
-                  <div className="">
-                    <img src={MT4}></img>
-                  </div>
+      <div className="flex flex-col p-4 w-96">
+        <h1 className="text-xl font-bold">People</h1>
+        <input
+          type="text"
+          placeholder="Search for People"
+          className="border border-gray-200 rounded p-2 mb-4 "
+        />
+        <div className="flex flex-col space-y-2">
+          <div className="flex   bg-gray-100 p-2 hover:bg-gray-200 rounded">
+            <div className="">
+              <img src={MT4}></img>
+            </div>
 
-                  <div className="flex flex-col ml-3">
-                    <span>Eddie Lobanovskiy</span>
-                    <span className="text-gray-500">
-                      laboanovskiy@gmail.com
-                    </span>
-                  </div>
-                </div>
-                <div className="flex   bg-gray-100 p-2 hover:bg-gray-200 rounded">
-                  <div className="">
-                    <img src={MT4}></img>
-                  </div>
-
-                  <div className="flex flex-col ml-3">
-                    <span>Alexey Stave</span>
-                    <span className="text-gray-500">alexeyst@gmail.com</span>
-                  </div>
-                </div>
-                <div className="flex   bg-gray-100 p-2 hover:bg-gray-200 rounded">
-                  <div className="">
-                    <img src={MT4}></img>
-                  </div>
-
-                  <div className="flex flex-col ml-3">
-                    <span>Anton Tkacheve</span>
-                    <span className="text-gray-500">
-                      tkacheveanton@gmail.com
-                    </span>
-                  </div>
-                </div>
-
-                <div className="ml-20">
-                  <button className="py-1 px-2 rounded mt-16  text-blue-800 bg-slate-100 hover:bg-slate-200 ">
-                    MY Schedule
-                  </button>
-                </div>
-              </div>
+            <div className="flex flex-col ml-3">
+              <span>Eddie Lobanovskiy</span>
+              <span className="text-gray-500">laboanovskiy@gmail.com</span>
             </div>
           </div>
-
-          <div className="min-h-screen   p-8 ">
-            <div className="bg-white p-4 rounded-lg shadow-md h-full">
-             
-              <div className="overflow-x-auto h-full ">
-                <table className="min-w-full divide-y divide-gray-200 h-full">
-                  <thead>
-                    <tr className="text-xs font-semibold text-gray-700 bg-gray-100">
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        <input
-                          type="checkbox"
-                          className="form-checkbox h-4 w-4 text-blue-600"
-                        />
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Date
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Time
-                      </th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Location
-                      </th>
-
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {meetings.map((meeting) => (
-                      <tr
-                        key={meeting.date}
-                        className="border-b flex-1 border-gray-200 hover:bg-gray-100"
-                      >
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <input
-                            type="checkbox"
-                            className="form-checkbox  h-4 w-4 text-blue-600"
-                          />
-                        </td>
-                        <td className="px-3 py-2 flex   gap-2 items-center ">
-                          <CiCalendarDate />
-                          {meeting.date}
-                        </td>
-                        <td className="  px-3 py-2  gap-2 items-center  w-30  ">
-                          <MdOutlineAccessTimeFilled />
-                          {meeting.time}
-                        </td>
-                        
-                        <td className="px-3 py-2 flex gap-2 items-center  ">
-                          <CiLocationOn />
-                          {meeting.location}
-                        </td>
-                        <td className="px-3 py-2">{meeting.edit}</td>
-                        <td className="px-3 py-2">{meeting.icon}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+          <div className="flex   bg-gray-100 p-2 hover:bg-gray-200 rounded">
+            <div className="">
+              <img src={MT4}></img>
             </div>
+
+            <div className="flex flex-col ml-3">
+              <span>Alexey Stave</span>
+              <span className="text-gray-500">alexeyst@gmail.com</span>
+            </div>
+          </div>
+          <div className="flex   bg-gray-100 p-2 hover:bg-gray-200 rounded">
+            <div className="">
+              <img src={MT4}></img>
+            </div>
+
+            <div className="flex flex-col ml-3">
+              <span>Anton Tkacheve</span>
+              <span className="text-gray-500">tkacheveanton@gmail.com</span>
+            </div>
+          </div>
+         
+          <div className="ml-20">
+          <button className="py-1 px-2 rounded mt-16  text-blue-800 bg-slate-100 hover:bg-slate-200 ">
+            MY Schedule
+          </button>
           </div>
         </div>
       </div>
+      </div>
+      <div className="max-w-3xl mx-auto mt-8 ml-5">
+      <h2 className="text-xl font-bold mb-4">December 2021</h2>
+      <div className="grid grid-cols-7 gap-4">
+        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+          <div key={day} className="text-center font-bold">{day}</div>
+        ))}
+        {daysInMonth.map((day) => (
+          <div key={day} className="h-24 border rounded p-1">
+            <div className="text-right">{day < 10 ? `0${day}` : day}</div>
+            <div className="space-y-1 mt-1">
+              {events[day] && events[day].map((event, index) => (
+                <div key={index} className={`${event.color} text-white text-xs rounded px-1`}>
+                  {event.label}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    </div>
     </div>
   );
 };
 
-export default Schedule;
+export default CalMonth;

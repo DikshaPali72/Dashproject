@@ -184,7 +184,7 @@ const DashNav = () => {
                 )}
                 {isNavOpen && <FaSignOutAlt onClick={()=>{
 
-                  navigate("/Login")
+                  navigate("/")
               
             }}  />}
               </div>

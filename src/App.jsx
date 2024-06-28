@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
-// import DashboardNav from './components/DashboardNav/DashboardNav'
+
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Dashboard from './components/Dashboard/Dashboard'
@@ -27,8 +27,13 @@ function App() {
 
 
   const router =   createBrowserRouter([
+    
     {
       path:'/',
+      element: <><Login/></>
+    },
+    {
+      path:'/Dashboard',
       element: <><DashNav/><Dashboard/></>
     },
     {
@@ -59,10 +64,7 @@ function App() {
       path:'/Settings',
       element: <><DashNav/><Settings/></>
     },
-    {
-      path:'/login',
-      element: <><Login/></>
-    },
+    
     {
       path:'/SignUp',
       element: <><SignUp/></>

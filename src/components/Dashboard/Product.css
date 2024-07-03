@@ -1,0 +1,31 @@
+.circular-chart {
+    display: block;
+    margin: 10px auto;
+    max-width: 80%;
+    max-height: 250px;
+  }
+  
+  .circle-bg {
+    fill: none;
+    stroke: #eee;
+    stroke-width: 3.8;
+  }
+  
+  .circle {
+    fill: none;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+  }
+  
+  .circle:nth-child(2) {
+    stroke: #1c64f2;
+  }
+  
+  .circle:nth-child(3) {
+    stroke: #facc15;
+  }
+  
+  .circle:nth-child(4) {
+    stroke: #f87171;
+  }
+  

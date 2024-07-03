@@ -1,8 +1,11 @@
 import React from "react";
 import shooes from "../images/shooes.png";
 import iphone from "../images/iphone.png";
+import { useNavigate } from "react-router-dom";
+
 
 const products = [
+
   {
     pic: <img src={shooes} />,
     name: "NIKE Shoes Black Pattern",
@@ -12,9 +15,12 @@ const products = [
   { pic: <img src={iphone} />, name: "iPhone 12", price: "$987", rating: 5 },
 ];
 
-const TopSellingProducts = () => (
+const TopSellingProducts = () => {
+
+  const navigate=useNavigate()
+  return(
   <div className="bg-white p-4 rounded-lg shadow">
-    <h2 className="text-xl font-bold mb-4">Top Selling Products</h2>
+    <h2 onClick={()=>{navigate("/Product")}} className=" cursor-pointer text-xl font-bold mb-4">Top Selling Products</h2>
     <ul>
       {products.map((product, index) => (
         <li key={index} className="mb-4">
@@ -40,6 +46,8 @@ const TopSellingProducts = () => (
       ))}
     </ul>
   </div>
+  
 );
+}
 
 export default TopSellingProducts;

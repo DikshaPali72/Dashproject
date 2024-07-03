@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
 import logo from'../images/symbol.png'
@@ -8,8 +8,36 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
 
 
+  const validate = () => {
+    const newErrors = {};
+    if (!email) newErrors.email = 'Email is required.';
+    else {
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) newErrors.email = 'Enter a valid email address.';
+    }
+    if (!password) newErrors.password = 'Password is required.';
+   else{
+     const passwordPattern = /^(?=.*[A-Z]).{6,}$/;
+    if (!passwordPattern.test(password)) 
+      newErrors.password = 'Password must be at least 6 characters long and contain at least one uppercase letter.';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (validate()) {
+      alert('Form submitted successfully!');
+      navigate("/Dashboard")
+      // Perform form submission tasks
+    }
+  };
   return (
     <div className="flex  min-h-screen w-full px-4 bg-gray-50">
       <div className="bg-white  rounded-lg px-8  h-full sm:max-w-md sm:w-full">
@@ -26,7 +54,9 @@ const Login = () => {
           </button>
         </div>
       
-       <div>
+       <form
+       onSubmit={handleSubmit}
+       >
        <div className="mb-6">
           <label htmlFor="email" className="text-gray-700 font-bold mb-2">
             Email Address
@@ -36,8 +66,11 @@ const Login = () => {
             id="email"
             className="w-full rounded-md border border-gray-300 bg-gray-100 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
             placeholder="example@gmail.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+        {errors.email && <span className="text-red-500 text-sm">{errors.email}</span>}
         <div className="mb-6">
           <label htmlFor="password" className="text-gray-700 font-bold mb-2">
             Password
@@ -47,8 +80,11 @@ const Login = () => {
             id="password"
             className="w-full rounded-md border border-gray-300 bg-gray-100  px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500"
             placeholder="••••••••"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        {errors.password && <span className="text-red-500 text-sm">{errors.password}</span>}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center">
             <input
@@ -60,12 +96,20 @@ const Login = () => {
               Remember me
             </label>
           </div>
-          <a href="#" className="text-sm text-blue-600 hover:underline">
+          <button
+        onClick={()=>{navigate("/Recover")}}
+          type="submit"
+          className=" text-sm text-blue-600 hover:underline"
+        >
+          reset password
+          </button>
+          {/* <a href="#" className="text-sm text-blue-600 hover:underline">
             Reset Password?
-          </a>
+            { navigate("/Recover")}
+          </a> */}
         </div>
         <button
-        onClick={()=>{navigate("/Dashboard")}}
+        // onClick={()=>{navigate("/Dashboard")}}
           type="submit"
           className="w-full rounded-md bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 focus:outline-none focus:ring-1 focus:ring-blue-500"
         >
@@ -74,13 +118,21 @@ const Login = () => {
         <div className="mt-6 text-center">
           <p className="text-gray-500">
             Don't have an account yet?{" "}
-            <a href="#" className="text-blue-600 hover:underline" >
+            {/* <a href="#" className="text-blue-600 hover:underline" >
               New Account
              { navigate("/SignUp")}
-            </a>
+            </a>/ */}
+            <button
+        onClick={()=>{navigate("/SignUp")}}
+          type="submit"
+          className="rounded-md text-blue-700    font-bold py-2 px-4 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        >
+         New Account
+
+        </button>
           </p>
         </div>
-       </div>
+       </form>
       </div>
       <div className="w-[550px] ml-48 mt-24">
         <img src={login}></img>

@@ -64,7 +64,7 @@ const DashNav = () => {
           <div className="flex flex-col items-center">
             <nav className=" w-full flex-1">
               <li className="list-none ">
-                <NavLink to="/">
+                <NavLink to="/Dashboard">
                   <NavItem
                     icon={<BsGridFill />}
                     label="Dashboard"

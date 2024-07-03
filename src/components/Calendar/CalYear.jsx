@@ -30,7 +30,7 @@ const CalYear = () => {
                 </div>
             </div>
       <div className="flex flex-row justify-between bg-gray-200 p-4">
-        <button className="bg-blue-500 ml-16 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button  className="bg-blue-500 ml-16 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           + Create Schedule
         </button>
       </div>

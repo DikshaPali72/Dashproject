@@ -20,6 +20,13 @@ import CalMonth from './components/Calendar/CalMonth'
 import CalYear from './components/Calendar/CalYear'
 import BoardList from './components/Settings/BoardList'
 import Timeline from './components/Settings/Timeline'
+import Recover from './components/Login/Recover'
+import Confirm from './components/SignUp/Confirm'
+import CreateEvent from './components/Calendar/CreateEvent'
+import CreateInvoice from './components/Invoice/CreateInvoice'
+import Product from './components/Dashboard/Product'
+import AddProduct from './components/Dashboard/AddProduct'
+
 
 
 function App() {
@@ -27,10 +34,14 @@ function App() {
 
 
   const router =   createBrowserRouter([
-    
+   
     {
       path:'/',
       element: <><Login/></>
+    },
+    {
+      path:'/SignUp',
+      element: <><SignUp/></>
     },
     {
       path:'/Dashboard',
@@ -65,10 +76,7 @@ function App() {
       element: <><DashNav/><Settings/></>
     },
     
-    {
-      path:'/SignUp',
-      element: <><SignUp/></>
-    },
+   
     {
       path:'/AddCustomer',
       element: <><DashNav/><AddCustomer/></>
@@ -89,7 +97,31 @@ function App() {
       path:'/Timeline',
       element: <><DashNav/><Timeline/></>
     },
-  
+    {
+      path:'/Confirm',
+      element: <><Confirm/></>
+    },
+    {
+      path:'/Recover',
+      element: <><Recover/></>
+    },
+    {
+      path:'/CreateEvent',
+      element: <><CreateEvent/></>
+    },
+    {
+      path:'/CreateInvoice',
+      element: <><DashNav/><CreateInvoice/></>
+    },
+    {
+      path:'/Product',
+      element: <><DashNav/><Product/></>
+    },
+    {
+      path:'/AddProduct',
+      element: <><DashNav/><AddProduct/></>
+    },
+   
   ])
     return (
       <>

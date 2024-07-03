@@ -2,82 +2,92 @@ import React, { useState } from "react";
 
 import "chart.js/auto";
 
-import MT4 from "../images/MsgT4.png";
+import cust1 from "../images/customer/cust1.png"
+import cust2 from "../images/customer/cust2.png"
+import cust3 from "../images/customer/cust3.png"
+import cust4 from "../images/customer/cust4.png"
+import cust5 from "../images/customer/cust5.png"
+import cust6 from "../images/customer/cust6.png"
+import cust7 from "../images/customer/cust7.png"
+import cust8 from "../images/customer/cust8.png"
+import cust9 from "../images/customer/cust9.png"
+import cust10 from "../images/customer/cust10.png"
+import cust11 from "../images/customer/cust11.png"
 
 
 const customers = [
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust1}></img>,
     name: "John Deo",
     email: "johndoe2211@gmail.com",
     phone: "+33757005467",
     gender: "Male",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust2}></img>,
     name: "Shelby Goode",
     email: "shelbygoode481@gmail.com",
     phone: "+33757005467",
     gender: "Female",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust3}></img>,
     name: "Robert Bacins",
     email: "robertbacins4182@gmail.com",
     phone: "+33757005467",
     gender: "Male",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust4}></img>,
     name: "John Carilo",
     email: "johncarilo182@gmail.com",
     phone: "+33757005467",
     gender: "Male",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust5}></img>,
     name: "Adriene Watson",
     email: "adrienewatson82@gmail.com",
     phone: "+83757005467",
     gender: "Female",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust6}></img>,
     name: "Jhon Deo",
     email: "johndeo24823@gmail.com",
     phone: "+6345700546",
     gender: "Male",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust7}></img>,
     name: "Mark Ruffalo",
     email: "markruffalo3735@gmail.com",
     phone: "+33757005467",
     gender: "Male",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust8}></img>,
     name: "Bethany Jackson",
     email: "bethanyjackson5@gmail.com",
     phone: "+33757005467",
     gender: "Female",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust9}></img>,
     name: "Christine Huston",
     email: "christinehuston4@gmail.com",
     phone: "+33757005467",
     gender: "Male",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust10}></img>,
     name: "Anne Jacob",
     email: "annejacob2@ummoh.com",
     phone: "+33757005467",
     gender: "Female",
   },
   {
-    pic: <img src={MT4}></img>,
+    pic: <img src={cust11}></img>,
     name: "James Mullican",
     email: "jamesmullican5346@gmail.com",
     phone: "+33757005467",
@@ -109,7 +119,11 @@ const AddCustomer = () => {
         console.log(formData);
       };
     
+      const statusColors = {
+        Male: "bg-green-100 text-green-700",
     
+        Female: "bg-red-100 text-red-700",
+      };
   return (
     <div className="flex min-h-screen bg-gray-100">
       
@@ -163,16 +177,15 @@ const AddCustomer = () => {
                       {customer.phone}
                     </p>
                   </td>
-                  {/* <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <span className={relative inline-block px-3 py-1 font-semibold leading-tight ${customer.gender === 'Male' ? 'text-blue-900' : 'text-pink-900'}}>
-                      <span aria-hidden="true" className={absolute inset-0 ${customer.gender === 'Male' ? 'bg-blue-200' : 'bg-pink-200'} opacity-50 rounded-full}></span>
-                      <span className="relative">{customer.gender}</span>
+                  <td className="px-5 py-1 border-b border-gray-200 bg-white text-sm">
+                    <span
+                      className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                        statusColors[customer.gender]
+                      }`}
+                    >
+                      {customer.gender}
                     </span>
-                  </td> */}
-                    <td className="px-5 py-1 border-b border-gray-200 bg-white text-sm">
-                
-                <span className="relative">{customer.gender}</span>
-                </td>
+                  </td>
 
                   
 
@@ -191,34 +204,7 @@ const AddCustomer = () => {
         </div>
       </main>
 
-      {/* <aside className="w-64 bg-white p-6">
-        <div className="text-center mb-6">
-          <img
-            src="https://via.placeholder.com/150"
-            alt="Profile"
-            className="mx-auto rounded-full h-24 w-24 mb-2"
-          />
-          <h2 className="text-lg font-semibold">John Deo</h2>
-          <p className="text-gray-600">UI/UX Designer</p>
-        </div>
-        <div className="mb-6">
-          <h3 className="text-gray-600">Contact Info</h3>
-          <div className="flex  items-center justify-between">
-            <MdEmail className="" />
-            <p className="text-gray-800 "> kajope5182@ummoh.com</p>
-          </div>
-
-          <p className="text-gray-800">33757005467</p>
-          <p className="text-gray-800">2239 Hog Camp Road, Schaumburg</p>
-        </div>
-        <div className="mb-6">
-          <h3 className="text-gray-600">Performance</h3>
-          <div className="h-32">
-
-          </div>
-        </div>
-      </aside> */}
-
+     
 
       {/* <div className="flex items-center justify-center min-h-screen bg-gray-100"> */}
       <div className=" max-w-md p-8 space-y-6 bg-white rounded shadow-md">

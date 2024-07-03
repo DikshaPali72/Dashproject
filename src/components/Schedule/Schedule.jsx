@@ -14,45 +14,81 @@ const Schedule = () => {
       time: "04:30PM",
       location: "Meeting Outside",
       edit: <CiEdit />,
-      icon: <MdDelete /> 
+      icon: <MdDelete />,
     },
-    { date: "02 Dec, 2021", time: "10:15AM", location: "Friends",
+    {
+      date: "02 Dec, 2021",
+      time: "10:15AM",
+      location: "Friends",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "04 Dec, 2021", time: "11:15AM", location: "Office Meeting",
+      icon: <MdDelete />,
+    },
+    {
+      date: "04 Dec, 2021",
+      time: "11:15AM",
+      location: "Office Meeting",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "04 Dec, 2021", time: "01:25PM", location: "Home",
+      icon: <MdDelete />,
+    },
+    {
+      date: "04 Dec, 2021",
+      time: "01:25PM",
+      location: "Home",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "05 Dec, 2021", time: "10:15AM", location: "Meeting Outside",
+      icon: <MdDelete />,
+    },
+    {
+      date: "05 Dec, 2021",
+      time: "10:15AM",
+      location: "Meeting Outside",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "07 Dec, 2021", time: "01:20PM", location: "Home",
+      icon: <MdDelete />,
+    },
+    {
+      date: "07 Dec, 2021",
+      time: "01:20PM",
+      location: "Home",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "08 Dec, 2021", time: "12:15PM", location: "Office Meeting",
+      icon: <MdDelete />,
+    },
+    {
+      date: "08 Dec, 2021",
+      time: "12:15PM",
+      location: "Office Meeting",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "09 Dec, 2021", time: "11:45AM", location: "Friends Zune",
+      icon: <MdDelete />,
+    },
+    {
+      date: "09 Dec, 2021",
+      time: "11:45AM",
+      location: "Friends Zune",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "10 Dec. 2021", time: "11:20AM", location: "Home",
+      icon: <MdDelete />,
+    },
+    {
+      date: "10 Dec. 2021",
+      time: "11:20AM",
+      location: "Home",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
-    { date: "12 Dec, 2021", time: "10.15AM", location: "Office Meeting",
+      icon: <MdDelete />,
+    },
+    {
+      date: "12 Dec, 2021",
+      time: "10.15AM",
+      location: "Office Meeting",
       edit: <CiEdit />,
-      icon: <MdDelete />  },
+      icon: <MdDelete />,
+    },
   ];
 
   return (
-    <div className="" >
-       <div className="flex justify-between items-center mt-4">
-                <h2 className="text-xl font-bold">Invoice List</h2>
-                <button className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">
-                  + Add New
-                </button>
-              </div>
+    <div className="">
+      <div className="flex justify-between items-center mt-4">
+        <h2 className="text-xl font-bold">Invoice List</h2>
+        <button className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">
+          + Add New
+        </button>
+      </div>
       <div className="">
         <div className="flex w-full">
           <div>
@@ -464,7 +500,6 @@ const Schedule = () => {
 
           <div className="min-h-screen   p-8 ">
             <div className="bg-white p-4 rounded-lg shadow-md h-full">
-             
               <div className="overflow-x-auto h-full ">
                 <table className="min-w-full divide-y divide-gray-200 h-full">
                   <thead>
@@ -495,22 +530,30 @@ const Schedule = () => {
                         key={meeting.date}
                         className="border-b flex-1 border-gray-200 hover:bg-gray-100"
                       >
-                        <td className="px-6 py-4 whitespace-nowrap">
+                        <td className="px-6 py-4 whitespace-nowrap flex-1">
                           <input
                             type="checkbox"
                             className="form-checkbox  h-4 w-4 text-blue-600"
                           />
                         </td>
-                        <td className="px-3 py-2 flex   gap-2 items-center ">
-                          <CiCalendarDate />
-                          {meeting.date}
+                        <td className="flex-1 flex items-center  mr-4">
+                          <span className="material-icons text-blue-500 mr-2">
+                            <CiCalendarDate />
+                          </span>
+                          <span>{meeting.date}</span>
                         </td>
-                        <td className="  px-3 py-2  gap-2 items-center  w-30  ">
+                        {/* <td className="  px-3 py-2  gap-2 items-center  w-30  ">
                           <MdOutlineAccessTimeFilled />
                           {meeting.time}
+                        </td> */}
+                        <td className="flex-1  items-center mr-4">
+                          <span className="material-icons text-gray-500 mr-2">
+                            <MdOutlineAccessTimeFilled />
+                          </span>
+                          <span>{meeting.time}</span>
                         </td>
-                        
-                        <td className="px-3 py-2 flex gap-2 items-center  ">
+
+                        <td className="px-3 py-2 flex-1 flex gap-2 items-center  ">
                           <CiLocationOn />
                           {meeting.location}
                         </td>

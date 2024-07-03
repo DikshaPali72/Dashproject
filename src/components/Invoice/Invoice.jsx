@@ -1,19 +1,32 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { MdDelete } from "react-icons/md";
+import { MdOutlineMail } from "react-icons/md";
+
+import voice1 from "../images/voice/voice1.png"
+import voice2 from "../images/voice/voice2.png"
+import voice3 from "../images/voice/voice3.png"
+import voice4 from "../images/voice/voice4.png"
+import voice5 from "../images/voice/voice5.png"
+import voice6 from "../images/voice/voice6.png"
+import voice7 from "../images/voice/voice7.png"
+import voice8 from "../images/voice/voice8.png"
+import voice9 from "../images/voice/voice9.png"
+import voice10 from "../images/voice/voice10.png"
 
 const Invoice = () => {
+  const navigate = useNavigate();
   const invoices = [
-    { id: "#876364", name: "Arron Guar", email: "arronguar@gmail.com", date: "12 Dec, 2020", status: "Complete" },
-    { id: "#876123", name: "James Mullican", email: "jamesmullican@gmail.com", date: "10 Dec, 2020", status: "Pending" },
-    { id: "#876213", name: "Robert Bacins", email: "robertbacins@gmail.com", date: "09 Dec, 2020", status: "Complete" },
-    { id: "#876987", name: "Bethany Jackson", email: "bethanyjackson@gmail.com", date: "09 Dec, 2020", status: "Cancel" },
-    { id: "#873145", name: "Anne Jacob", email: "annejacob@gmail.com", date: "10 Dec, 2020", status: "Complete" },
-    { id: "#873245", name: "Bethany Jackson", email: "bethanyjackson@gmail.com", date: "10 Dec, 2020", status: "Pending" },
-    { id: "#873246", name: "James Mullican", email: "jamesmullican@gmail.com", date: "10 Dec, 2020", status: "Complete" },
-    { id: "#873245", name: "Jhon Deo", email: "jhondeo32@gmail.com", date: "08 Dec, 2020", status: "Pending" },
-    { id: "#873364", name: "Bethany Jackson", email: "bethanyjackson@gmail.com", date: "02 Dec, 2020", status: "Cancel" },
-    { id: "#873679", name: "James Mullican", email: "jamesmullican@gmail.com", date: "01 Dec, 2020", status: "Pending" }
+    { id: "#876364", pic: <img src={voice1}></img>, name: "Arron Guar", email: "arronguar@gmail.com", date: "12 Dec, 2020", status: "Complete" },
+    { id: "#876123",pic: <img src={voice2}></img>, name: "James Mullican", email: "jamesmullican@gmail.com", date: "10 Dec, 2020", status: "Pending" },
+    { id: "#876213",pic: <img src={voice3}></img>, name: "Robert Bacins", email: "robertbacins@gmail.com", date: "09 Dec, 2020", status: "Complete" },
+    { id: "#876987",pic: <img src={voice4}></img>, name: "Bethany Jackson", email: "bethanyjackson@gmail.com", date: "09 Dec, 2020", status: "Cancel" },
+    { id: "#873145",pic: <img src={voice5}></img>, name: "Anne Jacob", email: "annejacob@gmail.com", date: "10 Dec, 2020", status: "Complete" },
+    { id: "#873245",pic: <img src={voice6}></img>, name: "Bethany Jackson", email: "bethanyjackson@gmail.com", date: "10 Dec, 2020", status: "Pending" },
+    { id: "#873246",pic: <img src={voice7}></img>, name: "James Mullican", email: "jamesmullican@gmail.com", date: "10 Dec, 2020", status: "Complete" },
+    { id: "#873245",pic: <img src={voice8}></img>, name: "Jhon Deo", email: "jhondeo32@gmail.com", date: "08 Dec, 2020", status: "Pending" },
+    { id: "#873364",pic: <img src={voice9}></img>, name: "Bethany Jackson", email: "bethanyjackson@gmail.com", date: "02 Dec, 2020", status: "Cancel" },
+    { id: "#873679",pic: <img src={voice10}></img>, name: "James Mullican", email: "jamesmullican@gmail.com", date: "01 Dec, 2020", status: "Pending" }
   ];
 
   const statusColors = {
@@ -30,7 +43,7 @@ const Invoice = () => {
           <div>
           <input placeholder='search' className='m-3 bg-slate-200 rounded-lg outline-none p-2' type="text" />
           <button className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600" onClick={()=>{
-            navigate('/AddCustomer')}}>
+            navigate('/CreateInvoice')}}>
             + Add New
           </button>
           </div>
@@ -58,14 +71,15 @@ const Invoice = () => {
                   </td>
                   <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-500">{invoice.id}</td>
                   <td className="px-6 py-1 whitespace-nowrap flex items-center">
-                    <div className="h-10 w-10 flex-shrink-0">
+                    {/* <div className="h-10 w-10 flex-shrink-0">
                       <img className="h-10 w-10 rounded-full" src={`https://ui-avatars.com/api/?name=${encodeURIComponent(invoice.name)}&background=random`} alt="" />
-                    </div>
-                    <div className="ml-4">
+                    </div> */}
+                    <div className="ml-4 flex gap-2 items-center">
+                    <div className="">{invoice.pic}</div>{" "}
                       <div className="text-sm font-medium text-gray-900">{invoice.name}</div>
                     </div>
                   </td>
-                  <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-500">{invoice.email}</td>
+                  <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-500 "><MdOutlineMail/>{invoice.email}</td>
                   <td className="px-6 py-1 whitespace-nowrap text-sm text-gray-500">{invoice.date}</td>
                   <td className="px-6 py-1 whitespace-nowrap">
                     <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${statusColors[invoice.status]}`}>

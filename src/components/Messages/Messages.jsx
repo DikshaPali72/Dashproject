@@ -5,15 +5,23 @@ import { HiDotsVertical } from "react-icons/hi";
 import { IoIosSend } from "react-icons/io";
 import chat from "../images/ChatImg.png"
 
+import msg1 from "../images/Massage/msg1.png"
+import msg2 from "../images/Massage/msg2.png"
+import msg3 from "../images/Massage/msg3.png"
+import msg4 from "../images/Massage/msg4.png"
+import msg5 from "../images/Massage/msg5.png"
+import msg6 from "../images/Massage/msg6.png"
+import msg7 from "../images/Massage/msg7.png"
+
 const Messages = () => {
   const users = [
-    { name: "Shelby Goode", message: "Lorem Ipsum is simply dummy text of the printing", time: "1 min ago" },
-    { name: "Robert Bacins", message: "Lorem Ipsum is simply dummy text of the printing", time: "9 min ago" },
-    { name: "John Carlio", message: "Lorem Ipsum is simply dummy text of the printing", time: "15 min ago", active: true },
-    { name: "Adriene Watson", message: "Lorem Ipsum is simply dummy text of the printing", time: "21 min ago" },
-    { name: "Jhon Deo", message: "Lorem Ipsum is simply dummy text of the printing", time: "38 min ago" },
-    { name: "Mark Ruffalo", message: "Lorem Ipsum is simply dummy text of the printing", time: "45 min ago" },
-    { name: "Bethany Jackson", message: "Lorem Ipsum is simply dummy text of the printing", time: "1 hr ago" },
+    { pic: <img src={msg1}></img>, name: "Shelby Goode", message: "Lorem Ipsum is simply dummy text of the printing", time: "1 min ago" },
+    { pic: <img src={msg2}></img>, name: "Robert Bacins", message: "Lorem Ipsum is simply dummy text of the printing", time: "9 min ago" },
+    {pic: <img src={msg3}></img>, name: "John Carlio", message: "Lorem Ipsum is simply dummy text of the printing", time: "15 min ago", active: true },
+    {pic: <img src={msg4}></img>, name: "Adriene Watson", message: "Lorem Ipsum is simply dummy text of the printing", time: "21 min ago" },
+    {pic: <img src={msg5}></img>, name: "Jhon Deo", message: "Lorem Ipsum is simply dummy text of the printing", time: "38 min ago" },
+    {pic: <img src={msg6}></img>, name: "Mark Ruffalo", message: "Lorem Ipsum is simply dummy text of the printing", time: "45 min ago" },
+    {pic: <img src={msg7}></img>, name: "Bethany Jackson", message: "Lorem Ipsum is simply dummy text of the printing", time: "1 hr ago" },
   ];
   return (
     
@@ -32,12 +40,18 @@ const Messages = () => {
       <div>
         {users.map(user => (
           <div key={user.name} className={`flex items-center p-2 ${user.active ? 'bg-purple-100' : ''} rounded-lg mb-2`}>
-            <img src={`https://via.placeholder.com/40?text=${user.name.charAt(0)}`} alt={user.name} className="rounded-full w-10 h-10"/>
-            <div className="ml-2">
-              <div className="font-bold">{user.name}</div>
+            {/* <img 
+            s
+            src={`https://via.placeholder.com/40?text=${user.name.charAt(0)}`}
+             alt={user.name} className="rounded-full w-10 h-10"/> */}
+            <div className="ml-2 flex">
+            <div className="">{user.pic}</div>{" "}
+             <div>
+             <div className="font-bold">{user.name}</div>
               <div className="text-sm text-gray-500">{user.message}</div>
             </div>
             <div className="ml-auto text-xs text-gray-400">{user.time}</div>
+             </div>
           </div>
         ))}
       </div>
@@ -47,7 +61,8 @@ const Messages = () => {
 <div className=" flex flex-col p-4 ml-8 w-full">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center">
-          <img src="https://via.placeholder.com/40?text=J" alt="John Carlio" className="rounded-full w-10 h-10"/>
+          
+          <img src={msg3} alt="John Carlio" className="rounded-full w-10 h-10"/>
           <div className="ml-2">
             <div className="font-bold">John Carlio</div>
             <div className="text-sm text-green-500">Online</div>

@@ -90,7 +90,7 @@ const Schedule = () => {
         </button>
       </div>
       <div className="">
-        <div className="flex w-full">
+        <div className="flex w-full max-md:flex-col">
           <div>
             <div class="max-w-sm w-full shadow-lg">
               <div class="md:p-8 p-5 dark:bg-gray-800 bg-white rounded-t">

@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import TaskColumn from './TaskColumn';
+import cust1 from "../images/customer/cust1.png";
 
 const BoardList = () => {
   

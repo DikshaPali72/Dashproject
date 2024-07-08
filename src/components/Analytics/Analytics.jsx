@@ -106,7 +106,7 @@ const Analytics = () => {
   };
 
   return (
-    <div className="flex  bg-gray-100">
+    <div className="flex max-md:flex-col  bg-gray-100">
       <main className="flex-1 p-6">
         <div className="flex justify-between items-center mb-3">
           <h2 className="text-2xl font-bold">Customer List</h2>
@@ -143,7 +143,7 @@ const Analytics = () => {
             <tbody>
               {customers.map((customer, index) => (
                 <tr key={index} className="m-6">
-                  <td className="px-5 py-1  border-b border-gray-200 bg-white text-sm">
+                  <td className="px-5 py-4  border-b border-gray-200 bg-white text-sm">
                     <div className="flex items-center">
                       <div className="ml-3">
                         <p className="text-gray-900  items-center flex whitespace-no-wrap">
@@ -195,7 +195,7 @@ const Analytics = () => {
         </div>
       </main>
 
-      <aside className="w-64 bg-white p-6">
+      <aside className="w-64 max-md:w-full bg-white p-6">
         <div className="text-center mb-6">
           <img
             src={cust1}
@@ -211,7 +211,7 @@ const Analytics = () => {
             <MdEmail className="" />
             <p className="text-gray-800 "> kajope5182@ummoh.com</p>
           </div>
-            <div className="flex  items-center gap-2 ">
+            <div className="flex  items-center gap-2 justify-between ">
             <IoIosCall/>
             <p className="text-gray-800"> 33757005467</p>
             </div>
@@ -223,7 +223,9 @@ const Analytics = () => {
         </div>
         <div className="mb-6">
           <h3 className="text-gray-600">Performance</h3>
-          <div className="h-32">{/* Insert Performance Chart Here */}</div>
+          <div className="h-32">{/* Insert Performance Chart Here */}
+            
+          </div>
         </div>
       </aside>
     </div>

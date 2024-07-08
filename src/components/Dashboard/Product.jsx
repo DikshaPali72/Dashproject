@@ -73,8 +73,8 @@ const Product = () => {
       </div>
       <div className="  flex justify-evenly mt-5  ">
         <div className="flex flex-wrap ">
-          <div className=" rounded-lg shadow w-full  flex justify-evenly ">
-            <div className="bg-white rounded-lg shadow p-3  flex ">
+          <div className=" rounded-lg  w-full  flex justify-evenly ">
+            <div className=" rounded-lg shadow p-3  flex ">
               <div>
                 <h2 className=" font-bold">Total Product</h2>
                 <p className=" font-semibold text-2xl">5,00,874</p>
@@ -186,7 +186,7 @@ const Product = () => {
                 <div className="w-1/4 ">{item.month}</div>
                 <div className="w-3/4 bg-gray-200 rounded-full ">
                   <div
-                    className=" h-2 bg-red-600 rounded-full"
+                    className=" h-2 bg-red-300 rounded-full"
                     style={{ width: `${(item.value / 30000) * 100}%` }}
                   ></div>
                 </div>

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebookF } from "react-icons/fa";
@@ -56,14 +57,15 @@ const SignUp = () => {
         <img className="text-center ml-40 mb-6 mt-10 w-16 " src={logo}></img>
         <h1 className="text-3xl font-bold text-center my-4 mb-6">Sign Up</h1>
         <div className="flex justify-center mb-6">
-          <button className="flex items-center px-4 py-2  rounded-md bg-gray-100 hover:bg-gray-300">
+          <a href="https://www.google.co.in/" className="flex items-center px-4 py-2  rounded-md bg-gray-100 hover:bg-gray-300">
             <FcGoogle />
             <span className="ml-2">Google</span>
-          </button>
-          <button className="flex items-center ml-3 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-300">
+          </a>
+          
+          <a href="https://www.facebook.com/" className="flex items-center ml-3 px-4 py-2 rounded-md bg-gray-100 hover:bg-gray-300">
             <FaFacebookF />
             <span className="ml-2  text-gray-600">Facebook</span>
-          </button>
+          </a>
         </div>
         
         <form 

@@ -2,6 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { IoIosCall } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
+import 'chart.js/auto';
+import { Bar } from 'react-chartjs-2';
+
 
 import { MdEmail } from "react-icons/md";
 import "chart.js/auto";
@@ -16,8 +19,11 @@ import cust8 from "../images/customer/cust8.png";
 import cust9 from "../images/customer/cust9.png";
 import cust10 from "../images/customer/cust10.png";
 import cust11 from "../images/customer/cust11.png";
+import performance from "../images/customer/performance.png";
+
 
 const customers = [
+  
   {
     pic: <img src={cust1}></img>,
     name: "John Deo",
@@ -104,6 +110,10 @@ const Analytics = () => {
 
     Female: "bg-red-100 text-red-700",
   };
+
+ 
+     
+
 
   return (
     <div className="flex max-md:flex-col  bg-gray-100">
@@ -207,7 +217,7 @@ const Analytics = () => {
         </div>
         <div className="mb-6">
           <h3 className="text-gray-600">Contact Info</h3>
-          <div className="flex  items-center justify-between">
+          <div className="flex gap-2  items-center justify-between">
             <MdEmail className="" />
             <p className="text-gray-800 "> kajope5182@ummoh.com</p>
           </div>
@@ -223,9 +233,9 @@ const Analytics = () => {
         </div>
         <div className="mb-6">
           <h3 className="text-gray-600">Performance</h3>
-          <div className="h-32">{/* Insert Performance Chart Here */}
-            
-          </div>
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+        <img className="w-60 h-52" src={performance} alt="" />
+      </div>
         </div>
       </aside>
     </div>

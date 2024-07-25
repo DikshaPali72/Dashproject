@@ -21,7 +21,7 @@ const Notifications = () => {
         
         <div className=' gap-10 flex'>
           <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>Dashboard</button>
-          <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>Analitics</button>           <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>Invoice</button>
+          <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>Analytics</button>           <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>Invoice</button>
            <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>Schedule</button>
            <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>calender</button>
            <button className=' bg-blue-500 text-white hover:underline p-2 rounded-xl'>massage</button>

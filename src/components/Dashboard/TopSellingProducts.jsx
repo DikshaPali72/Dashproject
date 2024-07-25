@@ -20,7 +20,10 @@ const TopSellingProducts = () => {
   const navigate=useNavigate()
   return(
   <div className="bg-white p-4 rounded-lg shadow">
-    <h2 onClick={()=>{navigate("/Product")}} className=" cursor-pointer text-xl font-bold mb-4">Top Selling Products</h2>
+    <div className="flex justify-between">
+    <h2  className=" cursor-pointer text-xl font-bold mb-4">Top Selling Products</h2>
+    <h1 onClick={()=>{navigate("/Product")}} className="text-indigo-800 cursor-pointer">see more </h1>
+    </div>
     <ul>
       {products.map((product, index) => (
         <li key={index} className="mb-4">

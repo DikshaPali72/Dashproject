@@ -1,15 +1,16 @@
 import React from 'react'
  import TimelineTask from './TimelineTask';
  import { useNavigate } from 'react-router-dom';
+ import board from "../images/customer/board.png";
 
 const Timeline = () => {
     const Navigate =useNavigate()
     const tasks = [
-        { time: "09:00 AM", title: "Graphic Design", priority: "Low", status: "On Track", members: 3 },
+        { time: "09:00 AM", title: "Graphic Design", priority: "Low", status: "On Track", pic: board, },
         { time: "10:00 AM",},
-        { time: "11:00 AM", title: "Dashboard Design", priority: "High", status: "On Track", members: 3 },
-        { time: "01:00 PM", title: "Logo Design", priority: "High", status: "On Track", members: 3 },
-        { time: "03:00 PM", title: "Web Design", priority: "High", status: "On Track", members: 3 }
+        { time: "11:00 AM", title: "Dashboard Design", priority: "High", status: "On Track", pic: board, },
+        { time: "01:00 PM", title: "Logo Design", priority: "High", status: "On Track", pic: board, },
+        { time: "03:00 PM", title: "Web Design", priority: "High", status: "On Track", pic: board, }
       ];
   return (
     <div className="p-6">

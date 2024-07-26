@@ -2,27 +2,27 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import TaskColumn from './TaskColumn';
-import cust1 from "../images/customer/cust1.png";
+import board from "../images/customer/board.png";
 
 const BoardList = () => {
   
     const tasks = {
         todo: [
-          { title: "Dashboard Design", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
-          { title: "Landing page Design", priority: "Medium", status: "At risk", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
-          { title: "E-Shop Mobile App", priority: "High", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
+          { title: "Dashboard Design", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
+          { title: "Landing page Design", priority: "Medium", status: "At risk", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
+          { title: "E-Shop Mobile App", priority: "High", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
         ],
         inProgress: [
-          { title: "Dashboard Design", priority: "High", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
-          { title: "Landing page Design", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
-          { title: "E-Shop Mobile App", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
+          { title: "Dashboard Design", priority: "High", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
+          { title: "Landing page Design", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
+          { title: "E-Shop Mobile App", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
         ],
         inReview: [
-          { title: "Dashboard Design", priority: "Medium", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
-          { title: "E-Shop Mobile App", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
+          { title: "Dashboard Design", priority: "Medium", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
+          { title: "E-Shop Mobile App", priority: "Low", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
         ],
         done: [
-          { title: "Dashboard Design", priority: "High", status: "On Track", description: "Discussion for management dashboard UI design", members: 3, comments: 112, attachments: "1.2k" },
+          { title: "Dashboard Design", priority: "High", status: "On Track", description: "Discussion for management dashboard UI design", pic: board, comments: 112, attachments: "1.2k" },
         ]
       };
     

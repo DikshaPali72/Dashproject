@@ -20,9 +20,12 @@ const TaskCard = ({ task }) => {
       <p className="text-sm text-gray-600 mb-4">{task.description}</p>
       <footer className="flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          {Array(task.members).fill().map((_, i) => (
+        <div className="mb-2 w-28">
+        {task.pic && <img src={task.pic} alt={task.title} className="w-full h-auto" />}
+      </div>
+          {/* {Array(task.members).fill().map((_, i) => (
             <img key={i} src="https://via.placeholder.com/20" alt="Member" className="w-6 h-6 rounded-full"/>
-          ))}
+          ))} */}
         </div>
         <div className="flex space-x-4 text-sm text-gray-400">
           <span><i className="fas fa-comment"></i> {task.comments}</span>
@@ -34,3 +37,23 @@ const TaskCard = ({ task }) => {
 };
 
 export default TaskCard;
+// import React from 'react';
+
+// const TaskCard = ({ task }) => {
+//   return (
+//     <div className="border rounded-lg p-4 shadow-sm">
+//       <h3 className="text-lg font-semibold mb-2">{task.title}</h3>
+//       <p className="text-sm mb-2"><strong>Priority:</strong> {task.priority}</p>
+//       <p className="text-sm mb-2"><strong>Status:</strong> {task.status}</p>
+//       <p className="text-sm mb-2">{task.description}</p>
+//       <div className="mb-2">
+//         {task.pic && <img src={task.pic} alt={task.title} className="w-full h-auto" />}
+//       </div>
+//       <p className="text-sm mb-2"><strong>Comments:</strong> {task.comments}</p>
+//       <p className="text-sm mb-2"><strong>Attachments:</strong> {task.attachments}</p>
+//     </div>
+//   );
+// };
+
+// export default TaskCard;
+

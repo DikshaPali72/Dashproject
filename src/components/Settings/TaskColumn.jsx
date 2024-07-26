@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskCard from './TaskCard';
 
-const TaskColumn = ({ title, tasks }) => {
+const TaskColumn = ({ title, tasks, }) => {
   return (
     <div>
       <h2 className="text-lg font-semibold mb-4">{title}</h2>

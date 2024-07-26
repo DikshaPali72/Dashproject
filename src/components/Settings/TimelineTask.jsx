@@ -12,9 +12,12 @@ const TimelineTask = ({ task }) => {
         </div>
         <div className="flex space-x-4 items-center">
           <div className="flex space-x-1">
-            {Array(task.members).fill().map((_, i) => (
+          <div className="mb-2 w-28">
+        {task.pic && <img src={task.pic} alt={task.title} className="w-full h-auto" />}
+      </div>
+            {/* {Array(task.members).fill().map((_, i) => (
               <img key={i} src="https://via.placeholder.com/20" alt="Member" className="w-6 h-6 rounded-full"/>
-            ))}
+            ))} */}
           </div>
           <span className={`px-2 py-1 text-xs font-semibold rounded ${task.priority === 'High' ? 'bg-red-100 text-red-500' : task.priority === 'Medium' ? 'bg-yellow-100 text-yellow-500' : 'bg-green-100 text-green-500'}`}>
             {task.priority}
